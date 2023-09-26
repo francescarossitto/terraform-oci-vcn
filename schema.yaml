@@ -6,7 +6,7 @@ groupings:
     variables:
     - region
     - compartment_id
-    - vcn_cidr
+    - vcn_cidrs
     - vcn_name
     - vcn_dns_label
     - lockdown_default_seclist
@@ -32,7 +32,9 @@ variables:
     default: dev
 
   vcn_cidrs:
-    type: list(string)
+    type: array
+    items:
+      type: string     
     title: VCN CIDR
     default: ["10.0.0.0/16"]
     required: true
